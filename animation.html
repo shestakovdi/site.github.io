@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		body{
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.stars{
+			background: #000 url(stars.png) repeat top center;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: -2;
+		}
+		.twincling{
+			background: transparent url(twinkling.png) repeat top center;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: -1;
+			animation: move-stars 200s linear infinite;
+		}
+		@keyframes move-stars {
+			0% {background-position: 0 0;}
+			100% {background-position: -10000px 5000px;}
+		}
+		.system{
+			width: 700px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.orbita{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid white;
+			border-radius: 100%;
+		}
+		.earth{
+			height: 500px;
+			width: 500px;
+			animation: spin 8s linear infinite;
+			position: absolute;
+			display: flex;
+		}
+		.earth-img{
+			position: absolute;
+			top: 50%;
+			left: -12px;
+			border-radius: 100%;
+			transform: translateY(-50%);
+		}
+		@keyframes spin {
+			from{
+				transform: rotate(0deg);
+			}
+			to{
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="stars"></div>
+	<div class="twincling"></div>
+	<div class="system">
+		<div class="sun">
+			<img src="https://www.dropbox.com/s/g02pto204mz1ywi/sun.png?raw=1" alt="sun" class="sun-img">
+		</div>
+        <div class="orbita earth">
+        	<img src="https://www.dropbox.com/s/ropzlyhb1v19l5t/earth.png?raw=1" alt="" class="earth-img">
+        	<div class="moon"></div>
+        </div>
+	</div>
+</body>
+</html>
